@@ -7,7 +7,7 @@ def upload_file(filename):
         items = [line.strip() for line in file]
     return items
 
-# Function to pick random integers between 1 and N without repeating
+# Função que seleciona numeros inteiros aleatórios sem repetição
 def escolher_aleatoriamente(items):
     n = len(items)
     indices = random.sample(range(n), n)
@@ -15,7 +15,7 @@ def escolher_aleatoriamente(items):
 
     for indice in indices:
         item = items[indice]
-        if len(string_final + item + " ") > 350:  # Verificar se atingiu um tamanho bom para a mensagem
+        if len(string_final + item + " ") > 350:  # Verificar se atingiu um tamanho bom para a mensagem (350 caracteres)
             break
         string_final += item + " " 
 
@@ -26,7 +26,7 @@ def main(filename):
     items = upload_file(filename)
     
     if len(items) == 0:
-        print("The file is empty.")
+        print("Erro: arquivo vazio.")
         return
     
     result = escolher_aleatoriamente(items)
